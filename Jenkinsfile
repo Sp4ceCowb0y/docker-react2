@@ -14,15 +14,16 @@ pipeline {
             steps {
                 sh '''
                     echo build
-		    docker build -t rfiguerasdegea/nginx_react_frontend . 
 
                     '''
+		sh 'docker build -t rfiguerasdegea/nginx_react_frontend -f Dockerfile.dev .'
             }
         }
 
         stage('Test') {
             steps {
                 sh 'echo test'
+		sh 'docker run rfiguerasdegea/nginx_react_frontend npm run test -- --coverage
             }
         }
 
