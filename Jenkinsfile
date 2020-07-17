@@ -14,9 +14,9 @@ pipeline {
             steps {
                 sh '''
                     echo build
+		    docker build -t rfiguerasdegea/nginx_react_frontend . 
 
                     '''
-                docker build -t rfiguerasdegea/nginx_react_frontend .
             }
         }
 
