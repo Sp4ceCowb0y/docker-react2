@@ -23,7 +23,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'echo test'
-		sh 'docker run rfiguerasdegea/nginx_react_frontend npm run test -- --coverage
+		sh 'docker run rfiguerasdegea/nginx_react_frontend npm run test -- --coverage'
             }
         }
 
