@@ -4,9 +4,11 @@ pipeline {
 
     stages {
 
-	stage('Clone repository') {
-	    checkout scm
-	}
+        stage('Clone repository') {
+	    steps {
+                checkout scm
+            }
+        }
 
         stage('Build') {
             steps {
